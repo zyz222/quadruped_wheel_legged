@@ -1,0 +1,8 @@
+prefix=/home/zyz/demo_xingtian_ws/install
+
+Name: xingtian
+Description: Description of xingtian
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

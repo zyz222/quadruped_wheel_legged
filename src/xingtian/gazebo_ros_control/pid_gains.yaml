@@ -1,0 +1,125 @@
+#<!-- controllers-->
+
+
+xingtian:
+  controller_joint_names: ['', 'zht_joint4', 'zht_joint3', 'zht_joint2', 'zht_joint1', 'yht_joint4', 'yht_joint3', 'yht_joint2', 'yht_joint1', 'zqt_joint4', 'zqt_joint3', 'zqt_joint2', 'zqt_joint1', 'yqt_joint4', 'yqt_joint3', 'yqt_joint2', 'yqt_joint1', ]
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+  # Position Controllers ---------------------------------------
+  zqt1_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: zqt_joint1
+    # pid:  {p: 800, i: 0, d: 0.15}
+  zqt2_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zqt_joint2
+    pid: {p: 800, i: 0, d: 0.15}
+      
+  zqt2_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: zqt_joint2
+    pid: {p: 800, i: 0, d: 0.15}
+
+  zqt3_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zqt_joint3
+    pid: {p: 800, i: 0, d: 0.15}
+  zqt3_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: zqt_joint3
+    pid:  {p: 800, i: 0, d: 0.15}
+  zqt4_position_controller:
+    type: position_controllers/JointPositionController
+    joint: zqt_joint4
+  yqt1_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint:  yqt_joint1
+  yqt2_position_controller:
+    type: position_controllers/JointPositionController
+    joint:  yqt_joint2
+    pid:  {p: 800, i: 0, d: 0.15}
+  yqt2_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: yqt_joint2
+    pid:  {p: 800, i: 0, d: 0.15}
+  yqt3_position_controller:
+    type: position_controllers/JointPositionController
+    joint: yqt_joint3
+    pid:  {p: 800, i: 0, d: 0.15}
+  yqt3_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: yqt_joint3
+    pid:  {p: 800, i: 0, d: 0.15}
+  yqt4_position_controller:
+    type: position_controllers/JointPositionController
+    joint: yqt_joint4
+  zht1_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint:  zht_joint1
+  zht2_position_controller:
+    type: position_controllers/JointPositionController
+    joint:  zht_joint2
+    pid:  {p: 800, i: 0, d: 0.15}
+  zht2_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: zht_joint2
+    pid:  {p: 800, i: 0, d: 0.15}
+  zht3_position_controller:
+    type: position_controllers/JointPositionController
+    joint:  zht_joint3
+    pid:  {p: 800, i: 0, d: 0.15}
+  zht3_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: zht_joint3
+    pid:  {p: 800, i: 0, d: 0.15}
+  zht4_position_controller:
+    type: position_controllers/JointPositionController
+    joint:  zht_joint4
+  yht1_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint:  yht_joint1
+  yht2_position_controller:
+    type: position_controllers/JointPositionController
+    joint:  yht_joint2
+    pid:  {p: 800, i: 0, d: 0.15}
+  yht2_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: yht_joint2
+    pid:  {p: 800, i: 0, d: 0.15}
+  yht3_position_controller:
+    type: position_controllers/JointPositionController
+    joint: yht_joint3
+    pid:  {p: 800, i: 0, d: 0.15}
+  yht3_effort_controller:
+    type: position_controllers/JointPositionController
+    joint: yht_joint3
+    pid:  {p: 800, i: 0, d: 0.15}
+  yht4_position_controller:
+    type: position_controllers/JointPositionController
+    joint:  yht_joint4
+  gazebo_ros_control:
+    pid_gains:
+      zqt_joint2: {p: 800.0, i: 0.05, d: 0.15}
+      zqt_joint3: {p: 800.0, i: 0.05, d: 0.15}
+      zqt_joint4: {p: 800.0, i: 0.05, d: 0.15}
+      yqt_joint2: {p: 800.0, i: 0.05, d: 0.15}
+      yqt_joint3: {p: 800.0, i: 0.05, d: 0.15}
+      yqt_joint4: {p: 800.0, i: 0.05, d: 0.15}
+      zht_joint2: {p: 800.0, i: 0.05, d: 0.15}
+      zht_joint3: {p: 800.0, i: 0.05, d: 0.15}
+      zht_joint4: {p: 800.0, i: 0.05, d: 0.15}
+      yht_joint2: {p: 800.0, i: 0.05, d: 0.15}
+      yht_joint3: {p: 800.0, i: 0.05, d: 0.15}
+      yht_joint4: {p: 800.0, i: 0.05, d: 0.15}
+      zqt_joint1: {p: 0.3, i: 0.001, d: 0.000001}
+      zht_joint1: {p: 0.3, i: 0.001, d: 0.000001}
+      yqt_joint1: {p: 0.3, i: 0.001, d: 0.000001}
+      yht_joint1: {p: 0.3, i: 0.001, d: 0.000001}
+
+
+
+
+

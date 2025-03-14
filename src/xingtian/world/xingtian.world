@@ -1,0 +1,2048 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='xingtian'>
+      <link name='dummy'>
+        <inertial>
+          <pose>-6e-06 0 0.000503 0 -0 0</pose>
+          <mass>17.0493</mass>
+          <inertia>
+            <ixx>0.118823</ixx>
+            <ixy>3.25903e-06</ixy>
+            <ixz>-1.50677e-05</ixz>
+            <iyy>2.09523</iyy>
+            <iyz>-8.25373e-09</iyz>
+            <izz>2.0615</izz>
+          </inertia>
+        </inertial>
+        <collision name='dummy_fixed_joint_lump__base_link_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='dummy_fixed_joint_lump__imu_link_collision_1'>
+          <pose>0 0 0.03503 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/imu_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='dummy_fixed_joint_lump__base_link_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/base_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/DarkGery</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='dummy_fixed_joint_lump__camera_link_visual_1'>
+          <pose>0.4 0 0.13 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.02 0.03 0.03</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='dummy_fixed_joint_lump__imu_link_visual_2'>
+          <pose>0 0 0.03503 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/imu_link.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='dummy_fixed_joint_lump__laser_link_visual_3'>
+          <pose>0.35 0 0.15 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.06</length>
+              <radius>0.04</radius>
+            </cylinder>
+          </geometry>
+        </visual>
+        <sensor name='camera1' type='camera'>
+          <update_rate>30</update_rate>
+          <camera name='head'>
+            <horizontal_fov>1.39626</horizontal_fov>
+            <image>
+              <width>800</width>
+              <height>800</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>300</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera>
+          <plugin name='camera_controller' filename='/opt/ros/noetic/lib/libgazebo_ros_camera.so'>
+            <alwaysOn>1</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>xingtian/camera1</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>camera_link</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0.4 0 0.13 0 -0 0</pose>
+        </sensor>
+        <gravity>1</gravity>
+        <sensor name='imu_sensor' type='imu'>
+          <always_on>1</always_on>
+          <update_rate>100</update_rate>
+          <visualize>1</visualize>
+          <topic>__default_topic__</topic>
+          <plugin name='imu_plugin' filename='/opt/ros/noetic/lib/libgazebo_ros_imu_sensor.so'>
+            <topicName>imu</topicName>
+            <bodyName>imu_link</bodyName>
+            <updateRateHZ>10.0</updateRateHZ>
+            <gaussianNoise>0.0</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frameName>imu_link</frameName>
+            <initialOrientationAsReference>0</initialOrientationAsReference>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0 0 0.03503 0 -0 0</pose>
+          <imu/>
+        </sensor>
+        <sensor name='head_hokuyo_sensor' type='gpu_ray'>
+          <visualize>0</visualize>
+          <update_rate>40</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>720</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.5708</min_angle>
+                <max_angle>1.5708</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.1</min>
+              <max>30</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.01</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_head_hokuyo_controller' filename='libgazebo_ros_gpu_laser.so'>
+            <topicName>/xingtian/laser/scan</topicName>
+            <frameName>hokuyo_link</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose>0.35 0 0.15 0 -0 0</pose>
+        </sensor>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yht_joint4' type='revolute'>
+        <pose relative_to='dummy'>-0.33864 -0.0825 -0.000883 0 -0 0</pose>
+        <parent>dummy</parent>
+        <child>yht_yao</child>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yht_yao'>
+        <pose relative_to='yht_joint4'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.00194 -0.05851 0.001335 0 -0 0</pose>
+          <mass>2.36316</mass>
+          <inertia>
+            <ixx>0.00418063</ixx>
+            <ixy>-9.39193e-05</ixy>
+            <ixz>0.00019498</ixz>
+            <iyy>0.00741887</iyy>
+            <iyz>6.4645e-05</iyz>
+            <izz>0.00432962</izz>
+          </inertia>
+        </inertial>
+        <collision name='yht_yao_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_yao.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yht_yao_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_yao.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yht_joint3' type='revolute'>
+        <pose relative_to='yht_yao'>0 -0.105 0 0 -0 0</pose>
+        <parent>yht_yao</parent>
+        <child>yht_qubing</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yht_qubing'>
+        <pose relative_to='yht_joint3'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.00989 0.015219 -0.034594 0 -0 0</pose>
+          <mass>0.343012</mass>
+          <inertia>
+            <ixx>0.000830322</ixx>
+            <ixy>-2.44911e-05</ixy>
+            <ixz>-0.000124823</ixz>
+            <iyy>0.000866213</iyy>
+            <iyz>-8.56665e-05</iyz>
+            <izz>0.000143539</izz>
+          </inertia>
+        </inertial>
+        <collision name='yht_qubing_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_qubing.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yht_qubing_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_qubing.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yht_joint2' type='revolute'>
+        <pose relative_to='yht_qubing'>0 0.016 -0.14 0 -0 0</pose>
+        <parent>yht_qubing</parent>
+        <child>yht_dianjizhou</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yht_dianjizhou'>
+        <pose relative_to='yht_joint2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0 -0.033337 -0.101527 0 -0 0</pose>
+          <mass>0.0711999</mass>
+          <inertia>
+            <ixx>0.000208257</ixx>
+            <ixy>-1.80301e-10</ixy>
+            <ixz>-7.68244e-10</ixz>
+            <iyy>0.000184278</iyy>
+            <iyz>-4.12845e-05</iyz>
+            <izz>3.23489e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='yht_dianjizhou_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yht_dianjizhou_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yht_joint1' type='revolute'>
+        <pose relative_to='yht_dianjizhou'>0 -0.029 -0.14 0 -0 0</pose>
+        <parent>yht_dianjizhou</parent>
+        <child>yht_wheel</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yht_wheel'>
+        <pose relative_to='yht_joint1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.026 0 0 -0 0</pose>
+          <mass>3.44066</mass>
+          <inertia>
+            <ixx>0.00775154</ixx>
+            <ixy>6.89009e-18</ixy>
+            <ixz>4.30388e-19</ixz>
+            <iyy>0.0139963</iyy>
+            <iyz>-1.77602e-18</iyz>
+            <izz>0.00775154</izz>
+          </inertia>
+        </inertial>
+        <collision name='yht_wheel_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_wheel.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>2</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yht_wheel_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yht_wheel.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yqt_joint4' type='revolute'>
+        <pose relative_to='dummy'>0.33864 -0.0825 -0.000883 0 -0 0</pose>
+        <parent>dummy</parent>
+        <child>yqt_yao</child>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yqt_yao'>
+        <pose relative_to='yqt_joint4'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.00168 -0.05851 -0.00165 0 -0 0</pose>
+          <mass>2.36316</mass>
+          <inertia>
+            <ixx>0.00425129</ixx>
+            <ixy>-8.13523e-05</ixy>
+            <ixz>-0.000208692</ixz>
+            <iyy>0.00741887</iyy>
+            <iyz>-7.9885e-05</iyz>
+            <izz>0.00425896</izz>
+          </inertia>
+        </inertial>
+        <collision name='yqt_yao_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_yao.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yqt_yao_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_yao.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yqt_joint3' type='revolute'>
+        <pose relative_to='yqt_yao'>0 -0.105 0 0 -0 0</pose>
+        <parent>yqt_yao</parent>
+        <child>yqt_qubing</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yqt_qubing'>
+        <pose relative_to='yqt_joint3'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.00989 0.015219 -0.034594 0 -0 0</pose>
+          <mass>0.343012</mass>
+          <inertia>
+            <ixx>0.000830323</ixx>
+            <ixy>2.44907e-05</ixy>
+            <ixz>0.00012482</ixz>
+            <iyy>0.000866213</iyy>
+            <iyz>-8.56666e-05</iyz>
+            <izz>0.000143538</izz>
+          </inertia>
+        </inertial>
+        <collision name='yqt_qubing_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_qubing.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yqt_qubing_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_qubing.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yqt_joint2' type='revolute'>
+        <pose relative_to='yqt_qubing'>0 0.016 -0.14 0 -0 0</pose>
+        <parent>yqt_qubing</parent>
+        <child>yqt_dianjizhou</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yqt_dianjizhou'>
+        <pose relative_to='yqt_joint2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.033337 -0.101527 0 -0 0</pose>
+          <mass>0.0711999</mass>
+          <inertia>
+            <ixx>0.000208257</ixx>
+            <ixy>9.53214e-12</ixy>
+            <ixz>4.06154e-11</ixz>
+            <iyy>0.000184278</iyy>
+            <iyz>-4.12845e-05</iyz>
+            <izz>3.23489e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='yqt_dianjizhou_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yqt_dianjizhou_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='yqt_joint1' type='revolute'>
+        <pose relative_to='yqt_dianjizhou'>0 -0.029 -0.14 0 -0 0</pose>
+        <parent>yqt_dianjizhou</parent>
+        <child>yqt_wheel</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='yqt_wheel'>
+        <pose relative_to='yqt_joint1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 -0.026 0 0 -0 0</pose>
+          <mass>3.44066</mass>
+          <inertia>
+            <ixx>0.00775154</ixx>
+            <ixy>-8.07781e-19</ixy>
+            <ixz>-8.66148e-19</ixz>
+            <iyy>0.0139963</iyy>
+            <iyz>9.19191e-19</iyz>
+            <izz>0.00775154</izz>
+          </inertia>
+        </inertial>
+        <collision name='yqt_wheel_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_wheel.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>2</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='yqt_wheel_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/yqt_wheel.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zht_joint4' type='revolute'>
+        <pose relative_to='dummy'>-0.33864 0.0825 -0.000883 0 -0 0</pose>
+        <parent>dummy</parent>
+        <child>zht_yao</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>200000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zht_yao'>
+        <pose relative_to='zht_joint4'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.001558 0.05851 0.001766 0 -0 0</pose>
+          <mass>2.36316</mass>
+          <inertia>
+            <ixx>0.00428106</ixx>
+            <ixy>7.54397e-05</ixy>
+            <ixz>0.00020711</ixz>
+            <iyy>0.00741887</iyy>
+            <iyz>-8.54907e-05</iyz>
+            <izz>0.00422919</izz>
+          </inertia>
+        </inertial>
+        <collision name='zht_yao_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_yao.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zht_yao_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_yao.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zht_joint3' type='revolute'>
+        <pose relative_to='zht_yao'>0 0.105 0 0 -0 0</pose>
+        <parent>zht_yao</parent>
+        <child>zht_qubing</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>200000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zht_qubing'>
+        <pose relative_to='zht_joint3'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0.00989 -0.015219 -0.034594 0 -0 0</pose>
+          <mass>0.343012</mass>
+          <inertia>
+            <ixx>0.000830323</ixx>
+            <ixy>2.44907e-05</ixy>
+            <ixz>-0.00012482</ixz>
+            <iyy>0.000866213</iyy>
+            <iyz>8.56666e-05</iyz>
+            <izz>0.000143538</izz>
+          </inertia>
+        </inertial>
+        <collision name='zht_qubing_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_qubing.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zht_qubing_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_qubing.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zht_joint2' type='revolute'>
+        <pose relative_to='zht_qubing'>0 -0.016 -0.14 0 -0 0</pose>
+        <parent>zht_qubing</parent>
+        <child>zht_dianjizhou</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>200000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zht_dianjizhou'>
+        <pose relative_to='zht_joint2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>-0 0.033337 -0.101527 0 -0 0</pose>
+          <mass>0.0711999</mass>
+          <inertia>
+            <ixx>0.000208257</ixx>
+            <ixy>9.53214e-12</ixy>
+            <ixz>-4.06154e-11</ixz>
+            <iyy>0.000184278</iyy>
+            <iyz>4.12845e-05</iyz>
+            <izz>3.23489e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='zht_dianjizhou_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zht_dianjizhou_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zht_joint1' type='revolute'>
+        <pose relative_to='zht_dianjizhou'>0 0.029 -0.14 0 -0 0</pose>
+        <parent>zht_dianjizhou</parent>
+        <child>zht_wheel</child>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zht_wheel'>
+        <pose relative_to='zht_joint1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.026 -0 0 -0 0</pose>
+          <mass>3.44066</mass>
+          <inertia>
+            <ixx>0.00775154</ixx>
+            <ixy>-7.1051e-18</ixy>
+            <ixz>-4.99165e-19</ixz>
+            <iyy>0.0139963</iyy>
+            <iyz>3.5744e-18</iyz>
+            <izz>0.00775154</izz>
+          </inertia>
+        </inertial>
+        <collision name='zht_wheel_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_wheel.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>2</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zht_wheel_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zht_wheel.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zqt_joint4' type='revolute'>
+        <pose relative_to='dummy'>0.33864 0.0825 -0.000883 0 -0 0</pose>
+        <parent>dummy</parent>
+        <child>zqt_yao</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zqt_yao'>
+        <pose relative_to='zqt_joint4'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.001211 0.05851 -0.002019 0 -0 0</pose>
+          <mass>2.36316</mass>
+          <inertia>
+            <ixx>0.0043534</ixx>
+            <ixy>-5.86389e-05</ixy>
+            <ixz>0.000184143</ixz>
+            <iyy>0.00741887</iyy>
+            <iyz>9.77819e-05</iyz>
+            <izz>0.00415685</izz>
+          </inertia>
+        </inertial>
+        <collision name='zqt_yao_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_yao.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zqt_yao_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_yao.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zqt_joint3' type='revolute'>
+        <pose relative_to='zqt_yao'>0 0.105 0 0 -0 0</pose>
+        <parent>zqt_yao</parent>
+        <child>zqt_qubing</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zqt_qubing'>
+        <pose relative_to='zqt_joint3'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0.00989 -0.015219 -0.034594 0 -0 0</pose>
+          <mass>0.343012</mass>
+          <inertia>
+            <ixx>0.000830322</ixx>
+            <ixy>-2.44911e-05</ixy>
+            <ixz>0.000124823</ixz>
+            <iyy>0.000866213</iyy>
+            <iyz>8.56665e-05</iyz>
+            <izz>0.000143539</izz>
+          </inertia>
+        </inertial>
+        <collision name='zqt_qubing_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_qubing.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zqt_qubing_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_qubing.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zqt_joint2' type='revolute'>
+        <pose relative_to='zqt_qubing'>0 -0.016 -0.14 0 -0 0</pose>
+        <parent>zqt_qubing</parent>
+        <child>zqt_dianjizhou</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-3.14</lower>
+            <upper>3.14</upper>
+            <effort>20000</effort>
+            <velocity>3</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zqt_dianjizhou'>
+        <pose relative_to='zqt_joint2'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.033337 -0.101527 0 -0 0</pose>
+          <mass>0.0711999</mass>
+          <inertia>
+            <ixx>0.000208257</ixx>
+            <ixy>-1.80301e-10</ixy>
+            <ixz>7.68244e-10</ixz>
+            <iyy>0.000184278</iyy>
+            <iyz>4.12845e-05</iyz>
+            <izz>3.23489e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='zqt_dianjizhou_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zqt_dianjizhou_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_dianjizhou.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='zqt_joint1' type='revolute'>
+        <pose relative_to='zqt_dianjizhou'>0 0.029 -0.14 0 -0 0</pose>
+        <parent>zqt_dianjizhou</parent>
+        <child>zqt_wheel</child>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='zqt_wheel'>
+        <pose relative_to='zqt_joint1'>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0.026 0 0 -0 0</pose>
+          <mass>3.44066</mass>
+          <inertia>
+            <ixx>0.00775154</ixx>
+            <ixy>4.55789e-19</ixy>
+            <ixz>-5.11437e-20</ixz>
+            <iyy>0.0139963</iyy>
+            <iyz>5.56894e-19</iyz>
+            <izz>0.00775154</izz>
+          </inertia>
+        </inertial>
+        <collision name='zqt_wheel_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_wheel.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>2</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='zqt_wheel_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/zyz/robot_leg/demo_xingtian_ws/src/xingtian/meshes/zqt_wheel.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <plugin name='gazebo_ros_control' filename='/opt/ros/noetic/lib/libgazebo_ros_control.so'>
+        <robotNamespace>/xingtian</robotNamespace>
+        <controlPeriod>0.001</controlPeriod>
+        <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      </plugin>
+      <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+        <robotNamespace>/xingtian</robotNamespace>
+      </plugin>
+      <frame name='camera_joint' attached_to='base_link'>
+        <pose>0.4 0 0.13 0 -0 0</pose>
+      </frame>
+      <frame name='camera_link' attached_to='camera_joint'/>
+      <frame name='imu_joint' attached_to='base_link'>
+        <pose>0 0 0.03503 0 -0 0</pose>
+      </frame>
+      <frame name='imu_link' attached_to='imu_joint'/>
+      <frame name='laser_joint' attached_to='base_link'>
+        <pose>0.35 0 0.15 0 -0 0</pose>
+      </frame>
+      <frame name='laser_link' attached_to='laser_joint'/>
+      <frame name='dummy_joint' attached_to='dummy'>
+        <pose>0 0 0 0 -0 0</pose>
+      </frame>
+      <frame name='base_link' attached_to='dummy_joint'/>
+      <pose>0 0 1 0 -0 0</pose>
+    </model>
+    <model name='beer'>
+      <link name='link'>
+        <pose>0 0 0.115 0 -0 0</pose>
+        <inertial>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00058</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00058</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.23</length>
+            </cylinder>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+              <radius>0.055</radius>
+              <length>0.23</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://beer/materials/scripts</uri>
+              <uri>model://beer/materials/textures</uri>
+              <name>Beer/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.29834 -0.163632 0 0 -0 0</pose>
+    </model>
+    <model name='cafe_table'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='surface'>
+          <pose>0 0 0.755 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.913 0.913 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='column'>
+          <pose>0 0 0.37 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.042 0.042 0.74</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose>0 0 0.02 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.56 0.56 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.06013 -1.57292 0 0 -0 0</pose>
+    </model>
+    <model name='cafe'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='main_floor'>
+          <pose>-0.4 -0.75 0.0948 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>9.38 22.63 0.19</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_1'>
+          <pose>-5.03 0.53 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 23.16 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_2'>
+          <pose>4.24 -0.31 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 21.48 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_3'>
+          <pose>-1.48 7.43 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>7.2 0.12 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_4'>
+          <pose>2.09 8.9 1.435 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 3.05 2.87</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_5'>
+          <pose>3.155 10.4 1.435 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.13 0.12 2.87</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_6'>
+          <pose>0.615 -10.98 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>7.36 0.15 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_7'>
+          <pose>-4.62 -10.98 1.415 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.93 0.15 2.83</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wall_8'>
+          <pose>-3.61 -10.98 2.69 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.09 0.15 0.28</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='coke'>
+          <pose>-4.385 0.26 0.95 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>1.03 1.03 1.52</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe/meshes/cafe.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-7.68261 3.01101 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>388 556000000</sim_time>
+      <real_time>397 457534520</real_time>
+      <wall_time>1702129490 998899047</wall_time>
+      <iterations>388556</iterations>
+      <model name='beer'>
+        <pose>1.29834 -0.163632 -2e-06 1e-06 -0 -3e-06</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.29834 -0.163632 0.114998 1e-06 -0 -3e-06</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -9.8 0 -0 0</acceleration>
+          <wrench>0 0 -3.822 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cafe'>
+        <pose>-7.68261 3.01101 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>-7.68261 3.01101 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='cafe_table'>
+        <pose>1.06013 -1.57292 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>1.06013 -1.57292 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='xingtian'>
+        <pose>0.006101 0.0135 0.126706 3e-06 0 -0.014635</pose>
+        <scale>1 1 1</scale>
+        <link name='dummy'>
+          <pose>0.006101 0.0135 0.126706 3e-06 0 -0.014635</pose>
+          <velocity>-9e-06 -0.000605 -6.2e-05 0.004776 -7.2e-05 0</velocity>
+          <acceleration>-0.043712 -2.99723 -1.26204 -1.4924 -0.66962 -0.000174</acceleration>
+          <wrench>-0.745264 -51.1007 -21.5169 0 -0 0</wrench>
+        </link>
+        <link name='yht_dianjizhou'>
+          <pose>-0.214521 -0.154789 0.054557 3.14158 -1.32311 3.12698</pose>
+          <velocity>0.000189 -0.000569 -0.000626 0.013891 -0.013555 -0.00058</velocity>
+          <acceleration>0.398177 -1.1239 -1.01024 -1.72928 -1.49 2.35555</acceleration>
+          <wrench>0.02835 -0.080022 -0.071929 0 -0 0</wrench>
+        </link>
+        <link name='yht_qubing'>
+          <pose>-0.335247 -0.169024 0.125823 5e-06 -1.03673 -0.014637</pose>
+          <velocity>-2e-05 -0.000605 -0.000971 0.005609 -0.002699 -0.003193</velocity>
+          <acceleration>0.327813 -2.25377 -4.93646 0.106998 -1.21717 2.00621</acceleration>
+          <wrench>0.112444 -0.773071 -1.69327 0 -0 0</wrench>
+        </link>
+        <link name='yht_wheel'>
+          <pose>-0.079232 -0.185771 0.08888 -3.14159 -0.771534 3.12696</pose>
+          <velocity>-0.000264 -0.001091 0.000652 0.012032 -0.008461 -0.000515</velocity>
+          <acceleration>0.061654 -1.23816 -0.130057 1.20217 0.43445 -1.39424</acceleration>
+          <wrench>0.212132 -4.26008 -0.44748 0 -0 0</wrench>
+        </link>
+        <link name='yht_yao'>
+          <pose>-0.33371 -0.064035 0.125823 1.3e-05 -1.35031 -0.014648</pose>
+          <velocity>-1.3e-05 -0.000596 -0.000459 0.02331 1.25909 -0.000145</velocity>
+          <acceleration>-0.026813 -2.92075 -4.5858 1.4147 -0.050753 -0.906713</acceleration>
+          <wrench>-0.063364 -6.9022 -10.837 0 -0 0</wrench>
+        </link>
+        <link name='yqt_dianjizhou'>
+          <pose>0.261392 -0.161759 0.011501 -3.14154 0.984343 3.12706</pose>
+          <velocity>-0.000445 7.8e-05 -0.000826 -0.003706 0.005266 0.001716</velocity>
+          <acceleration>-0.784314 0.124159 -1.09313 1.31821 -1.2604 -1.13749</acceleration>
+          <wrench>-0.055843 0.00884 -0.077831 0 -0 0</wrench>
+        </link>
+        <link name='yqt_qubing'>
+          <pose>0.341961 -0.178936 0.125823 -1.4e-05 0.615332 -0.014606</pose>
+          <velocity>-0.000124 -0.000602 -0.001066 0.003597 0.003417 -0.001922</velocity>
+          <acceleration>-0.761426 -2.20688 -5.20332 2.86564 -1.52996 2.84338</acceleration>
+          <wrench>-0.261178 -0.756985 -1.7848 0 -0 0</wrench>
+        </link>
+        <link name='yqt_wheel'>
+          <pose>0.144376 -0.189055 0.088981 3.14159 -0.930114 3.12702</pose>
+          <velocity>3.1e-05 0.000143 -1.6e-05 -0.001569 0.000586 0.002108</velocity>
+          <acceleration>-0.017506 -0.011938 0.019631 0.114293 -0.556565 1.03743</acceleration>
+          <wrench>-0.060233 -0.041075 0.067545 0 -0 0</wrench>
+        </link>
+        <link name='yqt_yao'>
+          <pose>0.343498 -0.073947 0.125823 2e-06 -0.766213 -0.014635</pose>
+          <velocity>-3.2e-05 -0.000599 -0.000499 -3.09682 0.411989 3.14153</velocity>
+          <acceleration>-0.064561 -2.90914 -4.58268 -2.65251 -0.846553 -1.3394</acceleration>
+          <wrench>-0.152567 -6.87477 -10.8296 0 -0 0</wrench>
+        </link>
+        <link name='zht_dianjizhou'>
+          <pose>-0.419326 0.191252 0.018037 3.1415 1.04068 3.12684</pose>
+          <velocity>0.000291 8.7e-05 0.000508 0.000972 -0.003817 -0.000151</velocity>
+          <acceleration>0.400087 0.235974 0.618326 1.7804 -0.693063 0.627919</acceleration>
+          <wrench>0.028486 0.016801 0.044025 0 -0 0</wrench>
+        </link>
+        <link name='zht_qubing'>
+          <pose>-0.329758 0.205936 0.125824 3e-05 0.692115 -0.01463</pose>
+          <velocity>-7e-06 -0.000593 0.000839 0.004347 -0.002738 -0.001303</velocity>
+          <acceleration>0.092662 -2.3189 2.52249 2.18507 1.08474 2.14868</acceleration>
+          <wrench>0.031784 -0.795411 0.865245 0 -0 0</wrench>
+        </link>
+        <link name='zht_wheel'>
+          <pose>-0.539672 0.222018 0.088828 3.14157 0.01353 3.12691</pose>
+          <velocity>1.1e-05 2e-06 5.3e-05 -2.3e-05 8.9e-05 0.000118</velocity>
+          <acceleration>0.020561 0.00013 -0.023063 -0.032025 0.185798 0.621512</acceleration>
+          <wrench>0.070742 0.000447 -0.079352 0 -0 0</wrench>
+        </link>
+        <link name='zht_yao'>
+          <pose>-0.331295 0.100947 0.125824 3.14159 -0.703928 3.12696</pose>
+          <velocity>-1e-05 -0.000596 0.000335 0.004646 -0.009857 -5.9e-05</velocity>
+          <acceleration>-0.027925 -2.90483 2.06376 -2.60805 -0.048902 0.87201</acceleration>
+          <wrench>-0.065992 -6.86458 4.87699 0 -0 0</wrench>
+        </link>
+        <link name='zqt_dianjizhou'>
+          <pose>0.259465 0.18132 0.016745 -3.14136 1.02978 3.12713</pose>
+          <velocity>0.000311 0.000118 0.000449 0.003355 -0.004333 -0.000885</velocity>
+          <acceleration>0.395113 0.093719 0.630225 2.71101 1.23784 -2.35007</acceleration>
+          <wrench>0.028132 0.006673 0.044872 0 -0 0</wrench>
+        </link>
+        <link name='zqt_qubing'>
+          <pose>0.347447 0.196025 0.125825 8.2e-05 0.677502 -0.014553</pose>
+          <velocity>-5.2e-05 -0.000606 0.000861 0.005735 -0.003185 0.000428</velocity>
+          <acceleration>0.178366 -2.09053 2.67183 0.358008 -1.06044 -2.36714</acceleration>
+          <wrench>0.061182 -0.717078 0.916469 0 -0 0</wrench>
+        </link>
+        <link name='zqt_wheel'>
+          <pose>0.139897 0.212087 0.088843 3.14157 -1.0506 3.12685</pose>
+          <velocity>2.5e-05 0 3.5e-05 -2.2e-05 -0.000456 9.8e-05</velocity>
+          <acceleration>-0.001797 0.007121 -0.003566 -0.150749 -0.005613 1.14925</acceleration>
+          <wrench>-0.006183 0.024502 -0.01227 0 -0 0</wrench>
+        </link>
+        <link name='zqt_yao'>
+          <pose>0.345913 0.091036 0.125824 2e-06 -0.174128 -0.014634</pose>
+          <velocity>-6e-06 -0.000599 0.000334 0.005563 0.051313 1.1e-05</velocity>
+          <acceleration>-0.03889 -2.92153 2.05216 -1.09946 -0.655599 -0.053495</acceleration>
+          <wrench>-0.091903 -6.90404 4.84957 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>3.53302 -2.88144 1.10123 0 0.275643 2.35619</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

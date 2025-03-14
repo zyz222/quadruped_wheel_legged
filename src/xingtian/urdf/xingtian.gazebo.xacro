@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="xingtian" xmlns:xacro="http://wiki.ros.org/xacro">
+  <xacro:property name="debug_var" value="Loaded successfully"/>
+  <xacro:if value="$(debug_var)">
+    <xacro:property name="debug_output" value="Debug: $(debug_var)"/>
+    <xacro:insert_block name="debug_output"/>
+  </xacro:if>
+  
+  <xacro:arg name = "laser_visual" default = "false" />
+  <xacro:arg name = "camera_visual" default = "false" />
+  <xacro:arg name = "imu_visual" default = "false" />
+
+ <gazebo reference = "base_link">
+    <material>Gazebo/DarkGery</material>
+ </gazebo>
+ <gazebo>
+   <plugin name = "gazebo_ros_control" filename="libgazebo_ros_control.so">
+     <robotNamespace>/xingtian</robotNamespace>
+   </plugin>
+ </gazebo>
+ <gazebo reference = "zht_yao">  <!--从上往下-->
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "zht_qubing">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "zht_dianjizhou">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "zht_wheel">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>2.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yht_yao">  <!--从上往下-->
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yht_qubing">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yht_dianjizhou">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yht_wheel">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>2.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yqt_yao">  <!--从上往下-->
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yqt_qubing">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yqt_dianjizhou">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "yqt_wheel">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>2.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+ <gazebo reference = "zqt_yao">  <!--从上往下-->
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+ </gazebo>
+
+  <gazebo reference = "zqt_qubing">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+  </gazebo>
+
+  <gazebo reference = "zqt_dianjizhou">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>1.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+  </gazebo>
+
+  <gazebo reference = "zqt_wheel">
+      <mu1>0.5</mu1>
+      <mu2>0.5</mu2>
+      <kp>500000.0</kp>
+      <kd>10.0</kd>
+      <minDepth>0.001</minDepth>
+      <maxVel>2.0</maxVel>
+      <fdir1>1 0 0 </fdir1>     <!-- force direaction  -->
+  </gazebo>
+
+  <!-- sensor -->
+ <!-- <gazebo reference = "imu_link">
+      <sensor type ="imu" name = "imu" >
+         <always_on>true</always_on>
+         <visualize>$(arg imu_visual)</visualize>
+      </sensor>
+      <material>Gazebo/FlatBlack</material>
+  </gazebo> -->
+  <!-- camera -->
+  <gazebo reference="camera_link">
+    <material>Gazebo/Black</material>
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="/opt/ros/noetic/lib/libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>xingtian/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- laser-->
+   <gazebo reference="laser_link">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <topicName>/rrbot/laser/scan</topicName>
+        <frameName>hokuyo_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- imu-->
+  <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="/opt/ros/noetic/lib/libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+</robot>
+
+
+
+

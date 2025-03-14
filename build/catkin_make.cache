@@ -1,0 +1,2 @@
+xingtian
+-DCATKIN_DEVEL_PREFIX=/home/zyz/demo_xingtian_ws/devel -DCMAKE_INSTALL_PREFIX=/home/zyz/demo_xingtian_ws/install -G Unix Makefiles

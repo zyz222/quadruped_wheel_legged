@@ -1,0 +1,5 @@
+paused: 'false'
+use_sim_time: 'true'
+gui: 'true'
+headless: 'false'
+debug: 'false'
